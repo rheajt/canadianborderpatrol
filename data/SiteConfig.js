@@ -4,7 +4,7 @@ module.exports = {
   siteTitleAlt: 'The realest, fake agency in North America', // Alternative site title for SEO.
   siteLogo: '/logos/logo-1024.png', // Logo used for SEO and manifest.
   siteUrl: 'https://canadianborderpatrol.com', // Domain of your website without pathPrefix.
-  pathPrefix: '',
+  pathPrefix: '/',
   siteDescription:
     'Investigating the important differences between the great border between two great countries', // Website description used for RSS feeds/meta description tag.
   siteRss: '/rss.xml', // Path to the RSS file.
