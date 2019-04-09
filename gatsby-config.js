@@ -2,21 +2,22 @@ module.exports = {
   siteMetadata: {
     title: `Canadian Border Patrol`,
     description: 'The realest, fake border agency in North America',
+    siteUrl: 'https://canadianborderpatrol.com',
     authors: [
       {
         name: `Jordan Rhea`,
         avatar: 'jordan.jpg',
         description: `Serial attention deficient web developer`,
-        siteUrl: `https://jordanrhea.com`,
         social: {
+          website: `https://jordanrhea.com`,
           twitter: `rheajt`,
         },
       },
       {
         name: `Ryan Oldford`,
         description: `Teacher and warden of the North`,
-        siteUrl: `https://github.com/roldford`,
         social: {
+          website: `https://github.com/roldford`,
           twitter: `roldford`,
         },
       },
@@ -67,7 +68,63 @@ module.exports = {
         //trackingId: `ADD YOUR TRACKING ID HERE`,
       },
     },
-    `gatsby-plugin-feed`,
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `{
+          site {
+            siteMetadata {
+              title
+              description
+              siteUrl
+              site_url: siteUrl
+            }
+          }
+        }`,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.edges.map(edge => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.excerpt,
+                  date: edge.node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  custom_elements: [
+                    { 'content:encoded': edge.node.html },
+                    { url: edge.node.frontmatter.url },
+                  ],
+                });
+              });
+            },
+            query: `
+            {
+              allMarkdownRemark(
+                limit: 1000,
+                sort: { order: DESC, fields: [frontmatter___date] }
+              ) {
+                edges {
+                  node {
+                    excerpt
+                    html
+                    fields { slug }
+                    frontmatter {
+                      title
+                      date
+                      url
+                    }
+                  }
+                }
+              }
+            }
+          `,
+            output: '/rss.xml',
+            title: 'Canadian Border Patrol',
+          },
+        ],
+      },
+    },
+
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
