@@ -26,17 +26,17 @@ workbox.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-610d6c47a2686deeff58.js"
+    "url": "webpack-runtime-8a68c5e78b4b68fa9e42.js"
   },
   {
-    "url": "app-3e15b2c00aac9a4cac38.js"
+    "url": "app-a65e91d3df441ae98bd7.js"
   },
   {
     "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-bb30891be4007fe2b0e4.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "3d085a9acc26519fd29ac63ffe448744"
+    "revision": "571085a217d250d0f1cc1bb45ccaf540"
   },
   {
     "url": "static/d/520/path---offline-plugin-app-shell-fallback-a-30-c5a-NZuapzHg3X9TaN1iIixfv1W23E.json",
@@ -44,13 +44,13 @@ self.__precacheManifest = [
   },
   {
     "url": "manifest.webmanifest",
-    "revision": "47ab65a38dca4421ee17acaf90ef3bf3"
+    "revision": "ffbcf57cabd0d0d3d777f94e8b47ae93"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/canadianborderpatrol/offline-plugin-app-shell-fallback/index.html", {
+workbox.routing.registerNavigationRoute("/offline-plugin-app-shell-fallback/index.html", {
   whitelist: [/^([^.?]*|[^?]*\.([^.?]{5,}|html))(\?.*)?$/],
   blacklist: [/\?(.+&)?no-cache=1$/],
 });
