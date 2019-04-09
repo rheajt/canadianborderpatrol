@@ -17,8 +17,6 @@ function Bio() {
       query={bioQuery}
       render={data => {
         const { authors } = data.site.siteMetadata;
-
-        console.log(data.jordan);
         return (
           <div
             style={{
