@@ -103,7 +103,6 @@ export const pageQuery = graphql`
         authors {
           name
           description
-          siteUrl
           social {
             twitter
           }

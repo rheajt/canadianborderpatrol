@@ -72,7 +72,6 @@ const bioQuery = graphql`
           name
           description
           avatar
-          siteUrl
           social {
             twitter
           }
