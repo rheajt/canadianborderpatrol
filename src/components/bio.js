@@ -29,7 +29,6 @@ function Bio() {
               <div
                 key={`${author.name}-${ind}`}
                 style={{
-                  display: `flex`,
                   marginBottom: rhythm(2.5),
                 }}
               >
@@ -43,6 +42,7 @@ function Bio() {
                     height: 'auto',
                     alignSelf: 'start',
                     borderRadius: '100%',
+                    display: 'block',
                     order: ind % 2 !== 0 ? 1 : 0,
                   }}
                 />
