@@ -31,5 +31,3 @@ export default Layout;
 //     padding: `1.5rem 0.75rem`,
 //   }}
 // >
-
-// <footer>© {new Date().getFullYear()} Canadian Border Patrol</footer>
