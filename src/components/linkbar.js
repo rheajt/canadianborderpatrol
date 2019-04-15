@@ -18,3 +18,5 @@ class LinkBar extends React.Component {
     )
   }
 }
+
+export default LinkBar;
