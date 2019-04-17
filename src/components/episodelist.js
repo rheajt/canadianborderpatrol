@@ -8,31 +8,28 @@ import Divider from './divider';
 
 class EpisodeList extends React.Component {
   render() {
+    let theMoreButton;
+    if (this.props.moreButton) {
+      theMoreButton = <Text textAlign='right'>
+        <Link to="/episodes/">More <IoMdArrowForwa /></Link>
+      </Text>;
+    } else {
+      theMoreButton = '';
+    }
     return(
-      <Flex
-        flexWrap='nowrap'
-        flexDirection='column'
-        justifyContent='center'
-      >
+      <Flex flexWrap='nowrap' flexDirection='column' justifyContent='center'>
         <Divider width={1/6} />
         {this.props.posts.map((post) => {
-          <EpisodeListItem
-            title={post.frontmatter.title}
-            slug={post.fields.slug}
-            date={post.frontmatter.date}
-            shortExcerpt={truncate(post.excerpt, 140, true)}
-          />
-          <Divider width={1/6} />
+          <>
+            <EpisodeListItem
+              title={post.frontmatter.title}
+              slug={post.fields.slug}
+              date={post.frontmatter.date}
+              shortExcerpt={truncate(post.excerpt, 140, true)} />
+            <Divider width={1/6} />
+          </>
         })}
-        {
-          this.props.moreButton ?
-          {
-            <Text textAlign='right'>
-              <Link to="/episodes/">More <IoMdArrowForwa /></Link>
-            </Text>
-          } :
-          ''
-        }
+        {theMoreButton}
       </Flex>
     )
   }
