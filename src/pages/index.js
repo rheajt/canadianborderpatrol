@@ -3,12 +3,11 @@ import { Link, graphql } from 'gatsby';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import { rhythm } from '../utils/typography';
-import cbpSeal from '../assets/canadian-border-patrol-logo.png';
+import EpisodeList from '../components/episodelist';
 
 class BlogIndex extends React.Component {
   render() {
-    const { data } = this.props;
+    // const { data } = this.props;
     const siteTitle = data.site.siteMetadata.title;
     const posts = data.allMarkdownRemark.edges;
 
@@ -17,46 +16,8 @@ class BlogIndex extends React.Component {
         <SEO
           title="All posts"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
-        />
-
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 2fr',
-          }}
-        >
-          <img src={cbpSeal} alt="canadian border patrol seal" />
-          <div>
-            {/* <Bio /> */}
-            {posts.map(({ node }) => {
-              const title = node.frontmatter.title || node.fields.slug;
-              return (
-                <div key={node.fields.slug}>
-                  <h3
-                    style={{
-                      marginBottom: rhythm(1 / 4),
-                    }}
-                  >
-                    <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                      {title}
-                    </Link>
-                  </h3>
-                  <small>{node.frontmatter.date}</small>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: node.frontmatter.description || node.excerpt,
-                    }}
-                  />
-                </div>
-              );
-            })}
-          </div>
-        </div>
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
+          />
+        <EpisodeList posts={posts} moreButton />
       </Layout>
     );
   }
@@ -71,7 +32,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: 5
+    ) {
       edges {
         node {
           excerpt
@@ -87,3 +51,39 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+// <div
+//   className="blog-index"
+// >
+//   <img src={cbpSeal} alt="canadian border patrol seal" />
+//   <div>
+//     {/* <Bio /> */}
+//     {posts.map(({ node }) => {
+//       const title = node.frontmatter.title || node.fields.slug;
+//       return (
+//         <div key={node.fields.slug}>
+//           <h3
+//             style={{
+//               marginBottom: `0.25rem`,
+//             }}
+//           >
+//             <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+//               {title}
+//             </Link>
+//           </h3>
+//           <small>{node.frontmatter.date}</small>
+//           <p
+//             dangerouslySetInnerHTML={{
+//               __html: node.frontmatter.description || node.excerpt,
+//             }}
+//           />
+//         </div>
+//       );
+//     })}
+//   </div>
+// </div>
+// <hr
+//   style={{
+//     marginBottom: `1rem`,
+//   }}
+// />
