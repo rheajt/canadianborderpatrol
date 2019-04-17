@@ -10,7 +10,7 @@ class Header extends React.Component {
     return(
       <Flex justifyContent='space-between'>
         <Box flex='1 1 auto'>
-          <Title />
+          <Title title={this.props.title}/>
         </Box>
         <Box flex='1 1 auto'>
           <LinkBar />

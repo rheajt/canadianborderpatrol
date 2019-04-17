@@ -13,7 +13,7 @@ class Layout extends React.Component {
     return (
       <Container>
         <GlobalStyle />
-        <Header />
+        <Header title={children.title}/>
         <main>{children}</main>
         <Footer />
       </Container>
