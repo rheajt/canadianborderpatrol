@@ -1,41 +1,27 @@
 import React from 'react';
-import Flex from 'rebass';
+import { Flex, Box } from 'rebass';
 import { Link } from 'gatsby';
-import { IoMdArrowForward } from 'react-icons/io';
 
 import EpisodeListItem from './episodelistitem';
-import Divider from './divider';
+// import Divider from './divider';
 
-class EpisodeList extends React.Component {
-  render() {
-    let theMoreButton;
-    if (this.props.moreButton) {
-      theMoreButton = <Text textAlign='right'>
-        <Link to="/episodes/">More <IoMdArrowForward /></Link>
-      </Text>;
-    } else {
-      theMoreButton = '';
-    }
-    return(
-      <Flex flexWrap='nowrap' flexDirection='column' justifyContent='center'>
-        <Divider width={1/6} />
-        {this.props.posts.map((post) => {
-          <>
-            <EpisodeListItem
-              title={post.frontmatter.title}
-              slug={post.fields.slug}
-              date={post.frontmatter.date}
-              shortExcerpt={truncate(post.excerpt, 140, true)} />
-            <Divider width={1/6} />
-          </>
-        })}
-        {theMoreButton}
-      </Flex>
-    )
-  }
-}
-
-export default EpisodeList;
+const EpisodeList = props => (
+  <Flex flexWrap='nowrap' flexDirection='column' justifyContent='center'>
+    <Box width={1/6}><hr /></Box>
+    {props.posts.map((post) => (
+      <>
+        <EpisodeListItem
+          key={post.slug}
+          title={post.title}
+          slug={post.slug}
+          date={post.date}
+          shortExcerpt={truncate(post.excerpt, 140, true)}
+        />
+        <Box width={1/6}><hr /></Box>
+      </>
+    ))}
+  </Flex>
+);
 
 // https://stackoverflow.com/questions/1199352/
 // smart-way-to-shorten-long-strings-with-javascript
@@ -48,3 +34,19 @@ function truncate( theString, n, useWordBoundary ) {
     subString
   ) + "..."
 }
+
+export default EpisodeList;
+
+// {theMoreButton}
+// let theMoreButton;
+// if (this.props.moreButton) {
+//   theMoreButton = <Text textAlign='right'>
+//     <Link to="/episodes/">More <IoMdArrowForward /></Link>
+//   </Text>;
+// } else {
+//   theMoreButton = '';
+// }
+
+// <Flex flexWrap='nowrap' flexDirection='column' justifyContent='center'>
+//   <Divider width={1/6} />
+// </Flex>

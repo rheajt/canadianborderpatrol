@@ -1,19 +1,23 @@
 import React from 'react';
-import { Box } from 'rebass'
-import styled from 'styled-components'
+import { Box } from 'rebass';
+import styled from 'styled-components';
 
-import Bio from './bio'
+import Bio from './bio';
 
 class Footer extends React.Component {
-  const FootText = styled.footer`
-    text-align: center;
-  `;
   render() {
+    const FootText = styled.footer`
+      text-align: center;
+    `;
     return(
-      <Bio />
-      <Box>
-        <FootText>© {new Date().getFullYear()} Canadian Border Patrol</FootText>
-      </Box>
+      <>
+        <Bio />
+        <Box>
+          <FootText>© {new Date().getFullYear()} Canadian Border Patrol</FootText>
+        </Box>
+      </>
     );
   }
 }
+
+export default Footer;

@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 import Container from './container'
 import { GlobalStyle } from '../theme/globalStyle'
 import Header from './header'
-import Bio from './bio';
+import Footer from './footer';
 
 
 class Layout extends React.Component {
@@ -13,7 +13,7 @@ class Layout extends React.Component {
     return (
       <Container>
         <GlobalStyle />
-        <Header title={children.title}/>
+        <Header/>
         <main>{children}</main>
         <Footer />
       </Container>
