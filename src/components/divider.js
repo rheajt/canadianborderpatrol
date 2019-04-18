@@ -1,4 +1,5 @@
 import React from 'react';
+import { Box } from 'rebass';
 
 class Divider extends React.Component {
   render() {
@@ -7,10 +8,7 @@ class Divider extends React.Component {
         {...props}
         as='hr'
         bg='grey'
-        css={{
-          border=0,
-          height=1
-        }}
+        css={{ border: 0, height: 1 }}
       />
     )
   }

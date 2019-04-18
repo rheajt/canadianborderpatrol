@@ -3,13 +3,13 @@ import { Flex, Box } from 'rebass';
 import styled from 'styled-components'
 
 class BioItem extends React.Component{
-  const Avatar = styled.img`
-    maxWidth: 100px;
-    height: auto;
-    align-self: 'start';
-    border-radius: 100%;
-  `
   render() {
+    const Avatar = styled.img`
+      maxWidth: 100px;
+      height: auto;
+      align-self: 'start';
+      border-radius: 100%;
+    `
     return(
       <Flex
         flexWrap={this.props.alignImage === 'left' ? 'wrap' : 'wrap-reverse'}

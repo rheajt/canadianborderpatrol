@@ -1,7 +1,7 @@
 import React from 'react';
 import Flex from 'rebass';
 import { Link } from 'gatsby';
-import { IoMdArrowForwa } from 'react-icons/io';
+import { IoMdArrowForward } from 'react-icons/io';
 
 import EpisodeListItem from './episodelistitem';
 import Divider from './divider';
@@ -11,7 +11,7 @@ class EpisodeList extends React.Component {
     let theMoreButton;
     if (this.props.moreButton) {
       theMoreButton = <Text textAlign='right'>
-        <Link to="/episodes/">More <IoMdArrowForwa /></Link>
+        <Link to="/episodes/">More <IoMdArrowForward /></Link>
       </Text>;
     } else {
       theMoreButton = '';
