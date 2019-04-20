@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import { IoMdArrowForward } from 'react-icons/io';
-import { Text, Box } from 'rebass';
+import { Flex, Text, Box } from 'rebass';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import EpisodeList from '../components/episodelist';
+import Divider from '../components/divider';
 
 class BlogIndex extends React.Component {
   render() {
@@ -28,10 +29,10 @@ class BlogIndex extends React.Component {
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
           />
         <EpisodeList posts={thePosts} />
-        <Text textAlign='right'>
+        <Text textAlign='center'>
           <Link to="/episodes/">All Posts <IoMdArrowForward /></Link>
         </Text>
-        <Box width={1/6}><hr /></Box>
+        <Divider width={1/6} />
       </Layout>
     );
   }

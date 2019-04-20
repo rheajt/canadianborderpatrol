@@ -3,11 +3,11 @@ import { Flex, Box } from 'rebass';
 import { Link } from 'gatsby';
 
 import EpisodeListItem from './episodelistitem';
-// import Divider from './divider';
+import Divider from './divider';
 
 const EpisodeList = props => (
   <Flex flexWrap='nowrap' flexDirection='column' justifyContent='center'>
-    <Box width={1/6}><hr /></Box>
+    <Divider width={1/6} />
     {props.posts.map((post) => (
       <>
         <EpisodeListItem
@@ -17,7 +17,7 @@ const EpisodeList = props => (
           date={post.date}
           shortExcerpt={truncate(post.excerpt, 140, true)}
         />
-        <Box width={1/6}><hr /></Box>
+        <Divider width={1/6} />
       </>
     ))}
   </Flex>

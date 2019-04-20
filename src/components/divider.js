@@ -1,17 +1,18 @@
 import React from 'react';
-import { Box } from 'rebass';
+import { Flex, Box } from 'rebass';
 
-class Divider extends React.Component {
-  render() {
-    return(
-      <Box
-        {...props}
-        as='hr'
-        bg='grey'
-        css={{ border: 0, height: 1 }}
-      />
-    )
-  }
-}
+const Divider = props => (
+  <Flex flexWrap='flex' justifyContent='center'>
+    <Box width={props.width}>
+      <hr />
+    </Box>
+  </Flex>
+);
 
 export default Divider;
+
+// {...props}
+// as='hr'
+// bg='grey'
+// css={{ border: 0, height: 1 }}
+// />
