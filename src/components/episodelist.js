@@ -7,7 +7,7 @@ import Divider from './divider';
 
 const EpisodeList = props => (
   <Flex flexWrap='nowrap' flexDirection='column' justifyContent='center'>
-    <Divider width={1/6} />
+    <Divider width={1/2} />
     {props.posts.map((post) => (
       <>
         <EpisodeListItem
@@ -17,7 +17,7 @@ const EpisodeList = props => (
           date={post.date}
           shortExcerpt={truncate(post.excerpt, 140, true)}
         />
-        <Divider width={1/6} />
+      <Divider width={1/2} />
       </>
     ))}
   </Flex>

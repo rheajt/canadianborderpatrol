@@ -32,7 +32,7 @@ class BlogIndex extends React.Component {
         <Text textAlign='center'>
           <Link to="/episodes/">All Posts <IoMdArrowForward /></Link>
         </Text>
-        <Divider width={1/6} />
+        <Divider width={1/2} />
       </Layout>
     );
   }
