@@ -15,7 +15,7 @@ const EpisodeList = props => (
           title={post.title}
           slug={post.slug}
           date={post.date}
-          shortExcerpt={truncate(post.excerpt, 140, true)}
+          shortExcerpt={post.excerpt}
         />
       <Divider width={1/2} />
       </>
@@ -23,17 +23,17 @@ const EpisodeList = props => (
   </Flex>
 );
 
-// https://stackoverflow.com/questions/1199352/
-// smart-way-to-shorten-long-strings-with-javascript
-function truncate( theString, n, useWordBoundary ) {
-  if (theString.length <= n) { return theString; }
-  const subString = theString.substr(0, n-1);
-  return (
-    useWordBoundary ?
-    subString.substr(0, subString.lastIndexOf(' ')) :
-    subString
-  ) + "..."
-}
+// // https://stackoverflow.com/questions/1199352/
+// // smart-way-to-shorten-long-strings-with-javascript
+// function truncate( theString, n, useWordBoundary ) {
+//   if (theString.length <= n) { return theString; }
+//   const subString = theString.substr(0, n-1);
+//   return (
+//     useWordBoundary ?
+//     subString.substr(0, subString.lastIndexOf(' ')) :
+//     subString
+//   ) + "..."
+// }
 
 export default EpisodeList;
 
