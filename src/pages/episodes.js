@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import { IoMdArrowForward } from 'react-icons/io';
 import { Flex, Text, Box } from 'rebass';
 
 import Layout from '../components/layout';
@@ -29,7 +28,6 @@ class AllEpisodesIndex extends React.Component {
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
           />
         <EpisodeList posts={thePosts} />
-        <Divider width={1/2} />
       </Layout>
     );
   }
