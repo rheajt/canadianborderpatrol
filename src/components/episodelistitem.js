@@ -24,7 +24,7 @@ class EpisodeListItem extends React.Component {
               {this.props.title}
             </Link>
           </Text>
-          <Text >
+          <Text fontSize={[0, 1, 2]} ml={2} css={{fontStyle: 'italic'}}>
             {this.props.date}
           </Text>
         </Flex>
