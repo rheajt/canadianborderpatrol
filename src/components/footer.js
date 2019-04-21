@@ -12,7 +12,7 @@ class Footer extends React.Component {
     return(
       <>
         <Bio />
-        <Box>
+        <Box fontSize={0}>
           <FootText>© {new Date().getFullYear()} Canadian Border Patrol</FootText>
         </Box>
       </>

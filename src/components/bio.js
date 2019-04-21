@@ -18,10 +18,11 @@ function Bio() {
       query={bioQuery}
       render={data => {
         const { authors } = data.site.siteMetadata;
+        const bioWidth = (1/authors.length);
         return (
-          <Flex>
+          <Flex flexWrap='nowrap' flexDirection='row'>
             {authors.map((author, ind) => (
-              <Box flex='1 1 auto'>
+              <Box flex='1 1 auto' mx={2} width={bioWidth}>
                 <BioItem
                   key={`${author.name}-${ind}`}
                   bioImage = {`/${author.avatar}`}

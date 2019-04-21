@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex, Box } from 'rebass';
+import { Flex, Box, Text, Link } from 'rebass';
 import styled from 'styled-components'
 
 class BioItem extends React.Component{
@@ -12,25 +12,31 @@ class BioItem extends React.Component{
     `
     return(
       <Flex
-        flexWrap={this.props.alignImage === 'left' ? 'wrap' : 'wrap-reverse'}
+        flexWrap='nowrap'
+        flexDirection='column'
+        alignItems='center'
+        fontSize={[1,2,3]}
       >
-        <Box
-          order={this.props.alignImage === 'left' ? 1 : 2}
-        >
+        <Box>
           <Avatar
             src={this.props.bioImage}
             alt={this.props.bioName}
           />
         </Box>
-        <Box
-          order={this.props.alignImage === 'left' ? 2 : 1}
+        <Text
+          mt={1}
+          mb={2}
+          fontWeight='bold'
+          css={{textDecoration: 'underline'}}
         >
-          <p>{this.props.bioName}</p>
-          <p>{this.props.bioDescription}</p>
-          <a href={`https://twitter.com/${this.props.bioTwitter}`}>
+          {this.props.bioName}
+        </Text>
+        <Text mb={1}>
+          {this.props.bioDescription}
+        </Text>
+        <Link href={`https://twitter.com/${this.props.bioTwitter}`}>
             Follow on Twitter!
-          </a>
-        </Box>
+        </Link>
       </Flex>
     )
   }
