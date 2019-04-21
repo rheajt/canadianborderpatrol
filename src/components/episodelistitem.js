@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { Flex, Box, Text } from 'rebass';
 
+import SimpleGatsbyLink from './simplegatsbylink';
+
 class EpisodeListItem extends React.Component {
   const
   render() {
@@ -13,17 +15,13 @@ class EpisodeListItem extends React.Component {
           alignItems='baseline'
           mb={2}
         >
-          <Text fontSize={[3, 4, 5]}  fontWeight='bold'>
-            <Link
-              to={this.props.slug}
-              css={{
-                textDecoration: 'none',
-                color: 'inherit'
-              }}
-            >
-              {this.props.title}
-            </Link>
-          </Text>
+          <SimpleGatsbyLink
+            fontSize={[3, 4, 5]}
+            fontWeight='bold'
+            to={this.props.slug}
+          >
+            {this.props.title}
+          </SimpleGatsbyLink>
           <Text fontSize={[0, 1, 2]} ml={2} css={{fontStyle: 'italic'}}>
             {this.props.date}
           </Text>
@@ -37,5 +35,3 @@ class EpisodeListItem extends React.Component {
 }
 
 export default EpisodeListItem;
-
-// TODO: Replace css prop on link with site theme

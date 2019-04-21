@@ -7,6 +7,7 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import EpisodeList from '../components/episodelist';
 import Divider from '../components/divider';
+import SimpleGatsbyLink from '../components/simplegatsbylink';
 
 class SiteIndex extends React.Component {
   render() {
@@ -23,27 +24,20 @@ class SiteIndex extends React.Component {
     });
 
     return (
-      <Layout location={this.props.location}>
+      <Layout>
         <SEO
           title="All posts"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
           />
         <EpisodeList posts={thePosts} />
-        <Text
+        <SimpleGatsbyLink
           textAlign='center'
           fontSize={[2, 3, 4]}
           fontWeight='bold'
+          to="/episodes/"
         >
-          <Link
-            to="/episodes/"
-            css={{
-              textDecoration: 'none',
-              color: 'inherit'
-            }}
-          >
-            All Episodes <IoMdArrowForward />
-          </Link>
-        </Text>
+          All Episodes <IoMdArrowForward />
+        </SimpleGatsbyLink>
         <Divider width={1/2} />
       </Layout>
     );
@@ -73,9 +67,6 @@ export const pageQuery = graphql`
     }
   }
 `;
-
-// TODO: remove this.props.location from Layout
-// TODO: Replace css prop on link with site theme
 
 // site {
 //   siteMetadata {
@@ -118,3 +109,19 @@ export const pageQuery = graphql`
 //     marginBottom: `1rem`,
 //   }}
 // />
+
+// <Text
+//   textAlign='center'
+//   fontSize={[2, 3, 4]}
+//   fontWeight='bold'
+// >
+//   <Link
+//     to="/episodes/"
+//     css={{
+//       textDecoration: 'none',
+//       color: 'inherit'
+//     }}
+//   >
+//     All Episodes <IoMdArrowForward />
+//   </Link>
+// </Text>
