@@ -8,7 +8,7 @@ import SEO from '../components/seo';
 import EpisodeList from '../components/episodelist';
 import Divider from '../components/divider';
 
-class SiteIndex extends React.Component {
+class AllEpisodesIndex extends React.Component {
   render() {
     const { data } = this.props;
     const thePosts = data.allMarkdownRemark.edges.map((post) => {
@@ -29,26 +29,18 @@ class SiteIndex extends React.Component {
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
           />
         <EpisodeList posts={thePosts} />
-        <Text
-          textAlign='center'
-          fontSize={[2, 3, 4]}
-          fontWeight='bold'
-        >
-          <Link to="/episodes/">All Episodes <IoMdArrowForward /></Link>
-        </Text>
         <Divider width={1/2} />
       </Layout>
     );
   }
 }
 
-export default SiteIndex;
+export default AllEpisodesIndex;
 
 export const pageQuery = graphql`
   query {
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      limit: 5
     ) {
       edges {
         node {
