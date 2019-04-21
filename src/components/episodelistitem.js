@@ -6,7 +6,7 @@ class EpisodeListItem extends React.Component {
   render() {
     return(
       <Flex flexWrap='nowrap' flexDirection='column'>
-        <Text fontSize={[4, 5, 6]}  fontWeight='bold'>
+        <Text fontSize={[3, 4, 5]}  fontWeight='bold'>
           {this.props.title}
         </Text>
         <Text fontSize={[0, 1, 2]}>

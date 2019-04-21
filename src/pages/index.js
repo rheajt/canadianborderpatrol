@@ -29,7 +29,11 @@ class BlogIndex extends React.Component {
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
           />
         <EpisodeList posts={thePosts} />
-        <Text textAlign='center'>
+        <Text
+          textAlign='center'
+          fontSize={[2, 3, 4]}
+          fontWeight='bold'
+        >
           <Link to="/episodes/">All Posts <IoMdArrowForward /></Link>
         </Text>
         <Divider width={1/2} />
