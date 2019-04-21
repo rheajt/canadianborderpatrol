@@ -10,10 +10,19 @@ class LinkBar extends React.Component {
         flexWrap='nowrap'
         flexDirection='row'
         justifyContent='flex-start'
+        alignItems='center'
+        p={1}
+        pr={2}
       >
-        <Link href='http://www.apple.com'><FaPodcast /></Link>
-        <Link href='https://en.wikipedia.org/wiki/RSS'><FaRss /></Link>
-        <Link href='https://twitter.com/canborderpatrol'><FaTwitter /></Link>
+        <Link px={1} href='http://www.apple.com'>
+          <FaPodcast />
+        </Link>
+        <Link px={1} href='https://en.wikipedia.org/wiki/RSS'>
+          <FaRss />
+        </Link>
+        <Link px={1} href='https://twitter.com/canborderpatrol'>
+          <FaTwitter />
+        </Link>
       </Flex>
     )
   }

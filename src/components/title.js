@@ -1,11 +1,16 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
-import { Flex, Image, Heading } from "rebass";
+import { Flex, Box, Heading } from "rebass";
+import styled from 'styled-components';
 
 import cbpSeal from '../assets/canadian-border-patrol-logo.png';
 
 class Title extends React.Component {
   render() {
+    const Logo = styled.img`
+      max-width: 100%;
+      height: auto;
+    `
     return(
       <StaticQuery
         query={titleQuery}
@@ -16,13 +21,15 @@ class Title extends React.Component {
               flexWrap='nowrap'
               flexDirection='row'
               justifyContent='flex-start'
+              alignItems='center'
             >
-              <Image
-                width={1/12}
-                src={cbpSeal}
-                alt={`${siteTitle} Seal`}
-              />
-              <Heading textAlign="left">{siteTitle}</Heading>
+              <Box width={1/6}>
+                <Logo
+                  src={cbpSeal}
+                  alt={`${siteTitle} Seal`}
+                />
+              </Box>
+              <Heading textAlign="left" fontSize={[1,2,3,4]}>{siteTitle}</Heading>
             </Flex>
           )
         }}
