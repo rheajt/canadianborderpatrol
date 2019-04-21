@@ -34,7 +34,15 @@ class SiteIndex extends React.Component {
           fontSize={[2, 3, 4]}
           fontWeight='bold'
         >
-          <Link to="/episodes/">All Episodes <IoMdArrowForward /></Link>
+          <Link
+            to="/episodes/"
+            css={{
+              textDecoration: 'none',
+              color: 'inherit'
+            }}
+          >
+            All Episodes <IoMdArrowForward />
+          </Link>
         </Text>
         <Divider width={1/2} />
       </Layout>
@@ -67,6 +75,7 @@ export const pageQuery = graphql`
 `;
 
 // TODO: remove this.props.location from Layout
+// TODO: Replace css prop on link with site theme
 
 // site {
 //   siteMetadata {

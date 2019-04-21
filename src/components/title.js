@@ -1,5 +1,5 @@
 import React from 'react';
-import { StaticQuery, graphql } from 'gatsby';
+import { StaticQuery, graphql, Link } from 'gatsby';
 import { Flex, Box, Heading } from "rebass";
 import styled from 'styled-components';
 
@@ -24,12 +24,25 @@ class Title extends React.Component {
               alignItems='center'
             >
               <Box width={[1/8, 1/10]} mr={2}>
-                <Logo
-                  src={cbpSeal}
-                  alt={`${siteTitle} Seal`}
-                />
+                <Link to='/'>
+                  <Logo
+                    src={cbpSeal}
+                    alt={`${siteTitle} Seal`}
+                  />
+                </Link>
+
               </Box>
-              <Heading textAlign="left" fontSize={[4,5,6]}>{siteTitle}</Heading>
+              <Heading textAlign="left" fontSize={[4,5,6]}>
+                <Link
+                  to='/'
+                  css={{
+                    textDecoration: 'none',
+                    color: 'inherit'
+                  }}
+                >
+                  {siteTitle}
+                </Link>
+              </Heading>
             </Flex>
           )
         }}
@@ -49,3 +62,5 @@ const titleQuery = graphql`
 `;
 
 export default Title;
+
+// TODO: Replace css prop on link with site theme

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import { Flex, Box, Text } from 'rebass';
 
 class EpisodeListItem extends React.Component {
@@ -7,7 +8,15 @@ class EpisodeListItem extends React.Component {
     return(
       <Flex flexWrap='nowrap' flexDirection='column' mx={2}>
         <Text fontSize={[3, 4, 5]}  fontWeight='bold'>
-          {this.props.title}
+          <Link
+            to={this.props.slug}
+            css={{
+              textDecoration: 'none',
+              color: 'inherit'
+            }}
+          >
+            {this.props.title}
+          </Link>
         </Text>
         <Text fontSize={[0, 1, 2]}>
           {this.props.date}
@@ -21,3 +30,6 @@ class EpisodeListItem extends React.Component {
 }
 
 export default EpisodeListItem;
+
+// TODO: Fix formatting to put date next to title (with flex)
+// TODO: Replace css prop on link with site theme
