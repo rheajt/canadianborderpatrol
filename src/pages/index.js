@@ -66,6 +66,8 @@ export const pageQuery = graphql`
   }
 `;
 
+// TODO: remove this.props.location from Layout
+
 // site {
 //   siteMetadata {
 //     title

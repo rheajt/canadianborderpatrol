@@ -23,6 +23,8 @@ class Layout extends React.Component {
 
 export default Layout;
 
+// TODO: Add ThemeProvider
+
 // <div
 //   style={{
 //     marginLeft: `auto`,
