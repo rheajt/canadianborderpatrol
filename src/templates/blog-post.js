@@ -22,8 +22,14 @@ class BlogPostTemplate extends React.Component {
         />
         <Flex flexWrap='noflex' flexDirection='column'>
           <Heading fontSize={[2,3,4]}>{siteTitle} Investigates...</Heading>
-          <Heading fontSize={[3,4,5]}>{post.frontmatter.title}</Heading>
-          <Text>{post.frontmatter.date}</Text>
+          <Flex flexWrap='flex' flexDirection='row' alignItems='baseline'>
+            <Heading fontSize={[3,4,5]}>
+              {post.frontmatter.title}
+            </Heading>
+            <Text fontSize={[0, 1, 2]} ml={2} css={{fontStyle: 'italic'}}>
+              {post.frontmatter.date}
+            </Text>
+          </Flex>
           <Box>
             {/* <iframe frameBorder="0" width="400" src={post.frontmatter.url} /> */}
           </Box>
@@ -35,7 +41,7 @@ class BlogPostTemplate extends React.Component {
               />
             </audio>
           </Box>
-          <Box>
+          <Box mx={2}>
             <div dangerouslySetInnerHTML={{ __html: post.html }} />
           </Box>
           <Divider width={1/4} />
@@ -86,8 +92,6 @@ export const pageQuery = graphql`
     }
   }
 `;
-
-// TODO: Make title and date use flex to go side by side when space is available
 
 // <header>
 //   <h3
