@@ -15,7 +15,7 @@ class BlogPostTemplate extends React.Component {
     const [__, id] = post.frontmatter.url.split('id=');
 
     return (
-      <Layout location={this.props.location}>
+      <Layout>
         <SEO
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}

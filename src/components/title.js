@@ -30,7 +30,6 @@ class Title extends React.Component {
                     alt={`${siteTitle} Seal`}
                   />
                 </Link>
-
               </Box>
               <Heading textAlign="left" fontSize={[4,5,6]}>
                 <Link
@@ -62,5 +61,3 @@ const titleQuery = graphql`
 `;
 
 export default Title;
-
-// TODO: Replace css prop on link with site theme
