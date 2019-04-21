@@ -14,13 +14,13 @@ class LinkBar extends React.Component {
         p={1}
         pr={2}
       >
-        <Link px={1} href='http://www.apple.com'>
+        <Link px={[1,2]} fontSize={[2,3]}href='http://www.apple.com'>
           <FaPodcast />
         </Link>
-        <Link px={1} href='https://en.wikipedia.org/wiki/RSS'>
+        <Link px={[1,2]} fontSize={[2,3]}href='https://en.wikipedia.org/wiki/RSS'>
           <FaRss />
         </Link>
-        <Link px={1} href='https://twitter.com/canborderpatrol'>
+        <Link px={[1,2]} fontSize={[2,3]}href='https://twitter.com/canborderpatrol'>
           <FaTwitter />
         </Link>
       </Flex>

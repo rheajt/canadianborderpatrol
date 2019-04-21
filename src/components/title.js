@@ -23,13 +23,13 @@ class Title extends React.Component {
               justifyContent='flex-start'
               alignItems='center'
             >
-              <Box width={1/6}>
+              <Box width={[1/8, 1/10]} mr={2}>
                 <Logo
                   src={cbpSeal}
                   alt={`${siteTitle} Seal`}
                 />
               </Box>
-              <Heading textAlign="left" fontSize={[1,2,3,4]}>{siteTitle}</Heading>
+              <Heading textAlign="left" fontSize={[4,5,6]}>{siteTitle}</Heading>
             </Flex>
           )
         }}
