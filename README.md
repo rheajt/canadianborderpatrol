@@ -33,6 +33,9 @@ npm test -- --watch
 
 # update snapshots
 npm test -- -u
+
+# get test coverage report
+npm test -- --coverage
 ```
 
 To build tests check the ![__tests__](src/components/__tests__) directory.
