@@ -9,38 +9,37 @@ import EpisodeList from '../components/episodelist';
 import Divider from '../components/divider';
 import SimpleGatsbyLink from '../components/simplegatsbylink';
 
-class SiteIndex extends React.Component {
-  render() {
-    const { data } = this.props;
-    const thePosts = data.allMarkdownRemark.edges.map(post => {
-      return {
-        title: post.node.frontmatter.title,
-        slug: post.node.fields.slug,
-        date: post.node.frontmatter.date,
-        excerpt: post.node.excerpt,
-      };
-    });
+const SiteIndex = props => {
+  console.log(props);
+  const { data } = props;
+  const thePosts = data.allMarkdownRemark.edges.map(post => {
+    return {
+      title: post.node.frontmatter.title,
+      slug: post.node.fields.slug,
+      date: post.node.frontmatter.date,
+      excerpt: post.node.excerpt,
+    };
+  });
 
-    return (
-      <Layout>
-        <SEO
-          title="All posts"
-          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
-        />
-        <EpisodeList posts={thePosts} />
-        <SimpleGatsbyLink
-          textAlign="center"
-          fontSize={[2, 3, 4]}
-          fontWeight="bold"
-          to="/episodes/"
-        >
-          All Episodes <IoMdArrowForward />
-        </SimpleGatsbyLink>
-        <Divider width={1 / 2} />
-      </Layout>
-    );
-  }
-}
+  return (
+    <Layout>
+      <SEO
+        title="All posts"
+        keywords={[`blog`, `gatsby`, `javascript`, `react`]}
+      />
+      <EpisodeList posts={thePosts} />
+      <SimpleGatsbyLink
+        textAlign="center"
+        fontSize={[2, 3, 4]}
+        fontWeight="bold"
+        to="/episodes/"
+      >
+        All Episodes <IoMdArrowForward />
+      </SimpleGatsbyLink>
+      <Divider width={1 / 2} />
+    </Layout>
+  );
+};
 
 export default SiteIndex;
 

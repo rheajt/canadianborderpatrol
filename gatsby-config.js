@@ -6,7 +6,7 @@ module.exports = {
     authors: [
       {
         name: `Jordan Rhea`,
-        avatar: 'jordan.jpg',
+        avatar: 'cbp-american.svg',
         description: `Web developer and amateur juggler`,
         social: {
           website: `https://jordanrhea.com`,
@@ -15,6 +15,7 @@ module.exports = {
       },
       {
         name: `Ryan Oldford`,
+        avatar: 'cbp-canadian.svg',
         description: `Teacher and warden of the North`,
         social: {
           website: `https://github.com/roldford`,

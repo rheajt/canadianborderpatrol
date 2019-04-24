@@ -1,34 +1,19 @@
 import React from 'react';
-import Media from 'react-media';
-
+import { ThemeProvider } from 'styled-components';
 import Container from './container';
-import { GlobalStyle } from '../theme/globalStyle';
+import theme, { GlobalStyle } from '../theme';
 import Header from './header';
 import Footer from './footer';
 
-class Layout extends React.Component {
-  render() {
-    const { children } = this.props;
-    return (
-      <Container>
-        <GlobalStyle />
-        <Header />
-        <main>{children}</main>
-        <Footer />
-      </Container>
-    );
-  }
-}
+const Layout = ({ children }) => (
+  <ThemeProvider theme={theme}>
+    <Container>
+      <GlobalStyle />
+      <Header />
+      <main>{children}</main>
+      <Footer />
+    </Container>
+  </ThemeProvider>
+);
 
 export default Layout;
-
-// TODO: Add ThemeProvider
-
-// <div
-//   style={{
-//     marginLeft: `auto`,
-//     marginRight: `auto`,
-//     maxWidth: `24rem`,
-//     padding: `1.5rem 0.75rem`,
-//   }}
-// >
