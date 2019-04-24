@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Flex, Box, Text, Link } from 'rebass';
 import styled from 'styled-components';
 import { FaTwitter } from 'react-icons/fa';
@@ -28,6 +29,13 @@ const BioItem = props => {
       </Link>
     </Flex>
   );
+};
+
+BioItem.propTypes = {
+  bioImage: PropTypes.string,
+  bioName: PropTypes.string,
+  bioDescription: PropTypes.string,
+  bioTwitter: PropTypes.string,
 };
 
 export default BioItem;

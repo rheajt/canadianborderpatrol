@@ -10,7 +10,6 @@ import Divider from '../components/divider';
 import SimpleGatsbyLink from '../components/simplegatsbylink';
 
 const SiteIndex = props => {
-  console.log(props);
   const { data } = props;
   const thePosts = data.allMarkdownRemark.edges.map(post => {
     return {
