@@ -18,18 +18,18 @@ function Bio() {
       query={bioQuery}
       render={data => {
         const { authors } = data.site.siteMetadata;
-        const bioWidth = (1/authors.length);
+        const bioWidth = 1 / authors.length;
         return (
-          <Flex flexWrap='nowrap' flexDirection='row'>
+          <Flex flexWrap="nowrap" flexDirection="row">
             {authors.map((author, ind) => (
-              <Box flex='1 1 auto' mx={2} width={bioWidth}>
+              <Box flex="1 1 auto" mx={2} width={bioWidth}>
                 <BioItem
                   key={`${author.name}-${ind}`}
-                  bioImage = {`/${author.avatar}`}
-                  bioName = {author.name}
-                  bioDescription = {author.description}
-                  bioTwitter = {author.social.twitter}
-                  alignImage = {ind % 2 !== 0 ? 'left' : 'right'}
+                  bioImage={`/${author.avatar}`}
+                  bioName={author.name}
+                  bioDescription={author.description}
+                  bioTwitter={author.social.twitter}
+                  alignImage={ind % 2 !== 0 ? 'left' : 'right'}
                 />
               </Box>
             ))}
@@ -58,7 +58,6 @@ const bioQuery = graphql`
 `;
 
 export default Bio;
-
 
 // <div
 //   key={`${author.name}-${ind}`}

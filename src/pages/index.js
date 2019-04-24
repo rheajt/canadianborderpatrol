@@ -12,15 +12,13 @@ import SimpleGatsbyLink from '../components/simplegatsbylink';
 class SiteIndex extends React.Component {
   render() {
     const { data } = this.props;
-    const thePosts = data.allMarkdownRemark.edges.map((post) => {
-      return (
-        {
-          title: post.node.frontmatter.title,
-          slug: post.node.fields.slug,
-          date: post.node.frontmatter.date,
-          excerpt: post.node.excerpt
-        }
-      )
+    const thePosts = data.allMarkdownRemark.edges.map(post => {
+      return {
+        title: post.node.frontmatter.title,
+        slug: post.node.fields.slug,
+        date: post.node.frontmatter.date,
+        excerpt: post.node.excerpt,
+      };
     });
 
     return (
@@ -28,17 +26,17 @@ class SiteIndex extends React.Component {
         <SEO
           title="All posts"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
-          />
+        />
         <EpisodeList posts={thePosts} />
         <SimpleGatsbyLink
-          textAlign='center'
+          textAlign="center"
           fontSize={[2, 3, 4]}
-          fontWeight='bold'
+          fontWeight="bold"
           to="/episodes/"
         >
           All Episodes <IoMdArrowForward />
         </SimpleGatsbyLink>
-        <Divider width={1/2} />
+        <Divider width={1 / 2} />
       </Layout>
     );
   }

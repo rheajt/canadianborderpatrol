@@ -1,11 +1,10 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import Media from 'react-media';
 
-import Container from './container'
-import { GlobalStyle } from '../theme/globalStyle'
-import Header from './header'
+import Container from './container';
+import { GlobalStyle } from '../theme/globalStyle';
+import Header from './header';
 import Footer from './footer';
-
 
 class Layout extends React.Component {
   render() {
@@ -13,7 +12,7 @@ class Layout extends React.Component {
     return (
       <Container>
         <GlobalStyle />
-        <Header/>
+        <Header />
         <main>{children}</main>
         <Footer />
       </Container>

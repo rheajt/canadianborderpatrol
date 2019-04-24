@@ -7,7 +7,7 @@ module.exports = {
       {
         name: `Jordan Rhea`,
         avatar: 'jordan.jpg',
-        description: `Serial attention deficient web developer`,
+        description: `Web developer and amateur juggler`,
         social: {
           website: `https://jordanrhea.com`,
           twitter: `rheajt`,
