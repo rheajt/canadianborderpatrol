@@ -1,54 +1,44 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import { IoMdArrowForward } from 'react-icons/io';
 import { Flex, Text, Box } from 'rebass';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import EpisodeList from '../components/episodelist';
 import Divider from '../components/divider';
-import SimpleGatsbyLink from '../components/simplegatsbylink';
 
-class SiteIndex extends React.Component {
+class AllEpisodesIndex extends React.Component {
   render() {
     const { data } = this.props;
-    const thePosts = data.allMarkdownRemark.edges.map(post => {
-      return {
-        title: post.node.frontmatter.title,
-        slug: post.node.fields.slug,
-        date: post.node.frontmatter.date,
-        excerpt: post.node.excerpt,
-      };
+    const thePosts = data.allMarkdownRemark.edges.map((post) => {
+      return (
+        {
+          title: post.node.frontmatter.title,
+          slug: post.node.fields.slug,
+          date: post.node.frontmatter.date,
+          excerpt: post.node.excerpt
+        }
+      )
     });
 
     return (
-      <Layout>
+      <Layout location={this.props.location}>
         <SEO
           title="All posts"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
-        />
+          />
         <EpisodeList posts={thePosts} />
-        <SimpleGatsbyLink
-          textAlign="center"
-          fontSize={[2, 3, 4]}
-          fontWeight="bold"
-          to="/episodes/"
-        >
-          All Episodes <IoMdArrowForward />
-        </SimpleGatsbyLink>
-        <Divider width={1 / 2} />
       </Layout>
     );
   }
 }
 
-export default SiteIndex;
+export default AllEpisodesIndex;
 
 export const pageQuery = graphql`
   query {
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      limit: 5
     ) {
       edges {
         node {
@@ -107,19 +97,3 @@ export const pageQuery = graphql`
 //     marginBottom: `1rem`,
 //   }}
 // />
-
-// <Text
-//   textAlign='center'
-//   fontSize={[2, 3, 4]}
-//   fontWeight='bold'
-// >
-//   <Link
-//     to="/episodes/"
-//     css={{
-//       textDecoration: 'none',
-//       color: 'inherit'
-//     }}
-//   >
-//     All Episodes <IoMdArrowForward />
-//   </Link>
-// </Text>

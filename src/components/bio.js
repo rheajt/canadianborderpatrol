@@ -7,9 +7,10 @@
 
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
-import Image from 'gatsby-image';
+// import Image from 'gatsby-image';
+import { Flex, Box } from 'rebass';
 
-import { rhythm } from '../utils/typography';
+import BioItem from './bioitem';
 
 function Bio() {
   return (
@@ -17,45 +18,22 @@ function Bio() {
       query={bioQuery}
       render={data => {
         const { authors } = data.site.siteMetadata;
+        const bioWidth = 1 / authors.length;
         return (
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gridGap: '1rem',
-            }}
-          >
+          <Flex flexWrap="nowrap" flexDirection="row">
             {authors.map((author, ind) => (
-              <div
-                key={`${author.name}-${ind}`}
-                style={{
-                  marginBottom: rhythm(2.5),
-                }}
-              >
-                <img
-                  src={`/${author.avatar}`}
-                  alt={author.name}
-                  style={{
-                    marginRight: rhythm(1 / 2),
-                    marginBottom: 0,
-                    maxWidth: '100px',
-                    height: 'auto',
-                    alignSelf: 'start',
-                    borderRadius: '100%',
-                    display: 'block',
-                    order: ind % 2 !== 0 ? 1 : 0,
-                  }}
+              <Box flex="1 1 auto" mx={2} width={bioWidth}>
+                <BioItem
+                  key={`${author.name}-${ind}`}
+                  bioImage={`/${author.avatar}`}
+                  bioName={author.name}
+                  bioDescription={author.description}
+                  bioTwitter={author.social.twitter}
+                  alignImage={ind % 2 !== 0 ? 'left' : 'right'}
                 />
-                <p>
-                  {author.description}
-                  {` `}
-                  <a href={`https://twitter.com/${author.social.twitter}`}>
-                    You should follow him on Twitter
-                  </a>
-                </p>
-              </div>
+              </Box>
             ))}
-          </div>
+          </Flex>
         );
       }}
     />
@@ -80,3 +58,40 @@ const bioQuery = graphql`
 `;
 
 export default Bio;
+
+// <div
+//   key={`${author.name}-${ind}`}
+//   style={{
+//     display: `flex`,
+//     marginBottom: `2.5rem`,
+//   }}
+// >
+//   <img
+//     src={`/${author.avatar}`}
+//     alt={author.name}
+//     style={{
+//       marginRight: `0.5rem`,
+//       marginBottom: 0,
+//       maxWidth: '100px',
+//       height: 'auto',
+//       alignSelf: 'start',
+//       borderRadius: '100%',
+//       order: ind % 2 !== 0 ? 1 : 0,
+//     }}
+//   />
+//   <p>
+//     {author.description}
+//     {` `}
+//     <a href={`https://twitter.com/${author.social.twitter}`}>
+//       You should follow him on Twitter
+//     </a>
+//   </p>
+// </div>
+
+// <div
+//   style={{
+//     display: 'grid',
+//     gridTemplateColumns: '1fr 1fr',
+//     gridGap: '1rem',
+//   }}
+// >
