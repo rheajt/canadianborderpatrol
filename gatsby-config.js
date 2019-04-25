@@ -83,18 +83,73 @@ module.exports = {
             }
           }
         }`,
+        setup: ({
+          query: {
+            site: { siteMetadata },
+            ...rest
+          },
+        }) => {
+          return {
+            ...siteMetadata,
+            ...rest,
+            custom_namespaces: {
+              "itunes": "http://www.itunes.com/dtds/podcast-1.0.dtd"
+            },
+            custom_elements: [
+              { "atom:link": {
+                _attr: {
+                  href: siteMetadata.siteUrl + "/rss.xml",
+                  rel: "self",
+                  type: "application/rss+xml",
+                }
+              }},
+              { "language": "en-us" },
+              { "image": [
+                { "url": "http://canadianborderpatrol.com/canadian-border-patrol-logo.png" },
+                { "title": siteMetadata.title },
+                { "link": siteMetadata.siteUrl },
+              ]},
+              { "copyright": "© 2019 Canadian Border Patrol" },
+              { "itunes:author": "Jordan Rhea; Ryan Oldford" },
+              { "itunes:owner": [
+                  { "itunes:name": "Ryan Oldford" },
+                  { "itunes:email": "ryan.oldford@gmail.com" }
+                ]
+              },
+              { "itunes:category": {
+                _attr: {
+                  text: "Society &amp; Culture"
+                }
+              }},
+              { "itunes:image": {
+                _attr: {
+                  href: "http://canadianborderpatrol.com/canadian-border-patrol-logo.png"
+                }
+              }},
+              { "itunes:subtitle": siteMetadata.description },
+              { "itunes:summary": "Ryan is Canadian. Jordan is American. Together, they explore strange and interesting bits of Canadian culture." },
+              { "itunes:explicit": "yes" },
+            ]
+          }
+        },
         feeds: [
           {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
               return allMarkdownRemark.edges.map(edge => {
                 return Object.assign({}, edge.node.frontmatter, {
+                  title: edge.node.frontmatter.title,
                   description: edge.node.excerpt,
                   date: edge.node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  enclosure: {
+                    'url': edge.node.frontmatter.url,
+                    'type': 'audio/mpeg',
+                  },
                   custom_elements: [
-                    { 'content:encoded': edge.node.html },
-                    { url: edge.node.frontmatter.url },
+                    { 'content:encoded': "<![CDATA["+edge.node.html+"]]>" },
+                    { 'itunes:duration': edge.node.frontmatter.episodeDuration },
+                    { 'itunes:subtitle': edge.node.excerpt },
                   ],
                 });
               });
@@ -114,6 +169,7 @@ module.exports = {
                       title
                       date
                       url
+                      episodeDuration
                     }
                   }
                 }
