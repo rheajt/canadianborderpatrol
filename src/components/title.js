@@ -3,7 +3,7 @@ import { StaticQuery, graphql, Link } from 'gatsby';
 import { Flex, Box, Heading } from "rebass";
 import styled from 'styled-components';
 
-import cbpSeal from '../assets/canadian-border-patrol-logo.png';
+// import cbpSeal from '../assets/canadian-border-patrol-logo.png';
 
 class Title extends React.Component {
   render() {
@@ -11,6 +11,7 @@ class Title extends React.Component {
       max-width: 100%;
       height: auto;
     `
+    const cbpSeal = '/canadian-border-patrol-logo.png'
     return(
       <StaticQuery
         query={titleQuery}
