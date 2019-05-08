@@ -30,7 +30,10 @@ const GlobalStyle = createGlobalStyle`
   }
   ul {
     margin: 0 auto;
-    list-style-type: none;
+    padding: 0 auto;
+  }
+  ul p {
+    margin: 0 auto;
   }
 `;
 
