@@ -13,6 +13,7 @@ const SiteIndex = props => {
   const { data } = props;
   const thePosts = data.allMarkdownRemark.edges.map(post => {
     return {
+      number: post.node.frontmatter.number,
       title: post.node.frontmatter.title,
       slug: post.node.fields.slug,
       date: post.node.frontmatter.date,
@@ -55,6 +56,7 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
+            number
             date(formatString: "MMMM DD, YYYY")
             title
           }

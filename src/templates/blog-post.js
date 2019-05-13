@@ -27,7 +27,7 @@ class BlogPostTemplate extends React.Component {
               {post.frontmatter.title}
             </Heading>
             <Text fontSize={[0, 1, 2]} ml={2} css={{fontStyle: 'italic'}}>
-              {post.frontmatter.date}
+              Ep. {post.frontmatter.number} - {post.frontmatter.date}
             </Text>
           </Flex>
           <Box>
@@ -85,6 +85,7 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 160)
       html
       frontmatter {
+        number
         title
         date(formatString: "MMMM DD, YYYY")
         url

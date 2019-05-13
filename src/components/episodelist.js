@@ -10,9 +10,10 @@ const EpisodeList = props => (
     {props.posts.map(post => (
       <React.Fragment key={post.slug}>
         <EpisodeListItem
+          number={post.number}
           title={post.title}
-          slug={post.slug}
           date={post.date}
+          slug={post.slug}
           shortExcerpt={post.excerpt}
         />
         <Divider width={1 / 2} />
