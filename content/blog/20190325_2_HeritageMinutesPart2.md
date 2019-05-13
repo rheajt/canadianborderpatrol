@@ -2,7 +2,7 @@
 number: 2
 title: Heritage Minutes (Part 2)
 date: '2019-03-25T12:00:00.284Z'
-url: https://drive.google.com/open?id=1_sUuPaKCeAJGwKmmAu1KNho9lhjpb5Xq
+url: https://s3-us-west-2.amazonaws.com/canadianborderpatrol.com/episodes/Canadian+Border+Patrol+02+-+Heritage+Minutes+(Part+2).mp3
 episodeDuration: '53:22'
 ---
 

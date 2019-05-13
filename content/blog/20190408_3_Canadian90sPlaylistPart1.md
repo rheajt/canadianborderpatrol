@@ -2,7 +2,7 @@
 number: 3
 title: Canadian 90s Playlist (Part 1)
 date: '2019-04-08T12:00:00.284Z'
-url: https://drive.google.com/open?id=11c6CKFpRaknPa_GW--c3mno-_gK2CJCY
+url: https://s3-us-west-2.amazonaws.com/canadianborderpatrol.com/episodes/Canadian+Border+Patrol+03+-+Canadian+90s+Playlist+(Part+1).mp3
 episodeDuration: '56:51'
 ---
 
