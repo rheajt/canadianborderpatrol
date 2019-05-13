@@ -8,17 +8,15 @@ import LinkBar from './linkbar';
 class Header extends React.Component {
   render() {
     return(
-      <Flex
-        justifyContent='space-between'
-        alignItems='center' 
-      >
-        <Box flex='1 1 auto'>
-          <Title/>
-        </Box>
-        <Box flex='1 1 auto'>
-          <LinkBar />
-        </Box>
-      </Flex>
+    <Flex
+      width={1}
+      flexWrap='noflex'
+      flexDirection='column'
+      alignItems='center'
+    >
+      <Title />
+      <LinkBar />
+    </Flex>
     )
   }
 }

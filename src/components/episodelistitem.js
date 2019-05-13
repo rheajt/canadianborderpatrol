@@ -13,7 +13,7 @@ const EpisodeListItem = props => (
         {props.date}
       </Text>
     </Flex>
-    <Box pl={[2, 3, 4]}>{props.shortExcerpt}</Box>
+    <Text fontSize={[1, 2, 3]} pl={[2, 3, 4]}>{props.shortExcerpt}</Text>
   </Flex>
 );
 

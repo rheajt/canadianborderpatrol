@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 const theme = {
-  breakpoints: ['40em', '52em', '64em'],
+  breakpoints: ['26em', '40em', '54em'],
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64],
   colors: {
     blue: '#07c',
@@ -9,6 +9,7 @@ const theme = {
   },
   space: [0, 4, 8, 16, 32, 64, 128, 256],
   fonts: {
+    serif: 'Libre Baskerville, Times New Roman, serif',
     sans: 'system-ui, sans-serif',
     mono: 'Menlo, monospace',
   },
@@ -19,11 +20,11 @@ const theme = {
 };
 
 const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css?family=Kodchasan:400,700');
+  @import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700');
   body {
     padding: 0;
     margin: 0;
-    font-family: Kodchasan;
+    font-family: Helvetica, Arial, sans-serif;
   }
   a {
     text-decoration: none;

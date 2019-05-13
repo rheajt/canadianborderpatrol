@@ -24,7 +24,11 @@ class Title extends React.Component {
               justifyContent='flex-start'
               alignItems='center'
             >
-              <Box width={[1/8, 1/10]} mr={2}>
+              <Box
+                width={[1/10, 1/8, 1/6]}
+                mr={2}
+                flex='0 1 auto'
+              >
                 <Link to='/'>
                   <Logo
                     src={cbpSeal}
@@ -32,7 +36,12 @@ class Title extends React.Component {
                   />
                 </Link>
               </Box>
-              <Heading textAlign="left" fontSize={[4,5,6]}>
+              <Heading
+                textAlign="left"
+                fontSize={[4,5,6,7]}
+                fontFamily='serif'
+                flex='0 1 auto'
+              >
                 <Link
                   to='/'
                   css={{
