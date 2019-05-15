@@ -104,32 +104,32 @@ module.exports = {
                   type: "application/rss+xml",
                 }
               }},
-              { "language": "en-us" },
+              { "itunes:subtitle": siteMetadata.description },
+              { "itunes:summary": "Ryan is Canadian. Jordan is American. Together, they explore strange and interesting bits of Canadian culture." },
               { "image": [
                 { "url": "https://s3-us-west-2.amazonaws.com/canadianborderpatrol.com/data/cpb_logo_1400.png" },
                 { "title": siteMetadata.title },
                 { "link": siteMetadata.siteUrl },
               ]},
-              { "copyright": "© 2019 Canadian Border Patrol" },
-              { "itunes:author": "Jordan Rhea; Ryan Oldford" },
-              { "itunes:owner": [
-                  { "itunes:name": "Ryan Oldford" },
-                  { "itunes:email": "ryan.oldford@gmail.com" }
-                ]
-              },
-              { "itunes:category": {
-                _attr: {
-                  text: "Society &amp; Culture"
-                }
-              }},
               { "itunes:image": {
                 _attr: {
                   href: "https://s3-us-west-2.amazonaws.com/canadianborderpatrol.com/data/cpb_logo_1400.png"
                 }
               }},
-              { "itunes:subtitle": siteMetadata.description },
-              { "itunes:summary": "Ryan is Canadian. Jordan is American. Together, they explore strange and interesting bits of Canadian culture." },
+              { "itunes:author": "Jordan Rhea; Ryan Oldford" },
+              { "itunes:category": {
+                _attr: {
+                  text: "Society & Culture"
+                }
+              }},
               { "itunes:explicit": "yes" },
+              { "language": "en-us" },
+              { "copyright": "© 2019 Canadian Border Patrol" },
+              { "itunes:owner": [
+                  { "itunes:name": "Ryan Oldford" },
+                  { "itunes:email": "ryan.oldford@gmail.com" }
+                ]
+              },
             ]
           }
         },
@@ -200,3 +200,10 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
   ],
 };
+
+// { "itunes:category": [
+//   { _attr: { text: "Society & Culture" }},
+//   { "itunes:category": {
+//     _attr: { text: "Personal Journals" }
+//   }}
+// ]},
