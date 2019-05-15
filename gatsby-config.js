@@ -42,7 +42,7 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        "excerpt_separator": `<!-- end -->`, 
+        "excerpt_separator": `<!-- end -->`,
         plugins: [
           {
             resolve: `gatsby-remark-images`,
@@ -106,7 +106,7 @@ module.exports = {
               }},
               { "language": "en-us" },
               { "image": [
-                { "url": "http://canadianborderpatrol.com/canadian-border-patrol-logo.png" },
+                { "url": "https://s3-us-west-2.amazonaws.com/canadianborderpatrol.com/data/cpb_logo_1400.png" },
                 { "title": siteMetadata.title },
                 { "link": siteMetadata.siteUrl },
               ]},
@@ -124,7 +124,7 @@ module.exports = {
               }},
               { "itunes:image": {
                 _attr: {
-                  href: "http://canadianborderpatrol.com/canadian-border-patrol-logo.png"
+                  href: "https://s3-us-west-2.amazonaws.com/canadianborderpatrol.com/data/cpb_logo_1400.png"
                 }
               }},
               { "itunes:subtitle": siteMetadata.description },
