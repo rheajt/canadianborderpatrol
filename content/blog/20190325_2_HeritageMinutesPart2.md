@@ -3,7 +3,7 @@ number: 2
 title: Heritage Minutes (Part 2)
 date: '2019-03-25T12:00:00.284Z'
 url: https://s3-us-west-2.amazonaws.com/canadianborderpatrol.com/episodes/Canadian+Border+Patrol+02+-+Heritage+Minutes+(Part+2).mp3
-episodeDuration: '53:22'
+episodeDuration: '53:08'
 ---
 
 Jordan and Ryan continue investigating the Heritage Minute PSAs, and Jordan discovers the true nature of Canadian history.
