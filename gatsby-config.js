@@ -193,11 +193,11 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
       },
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-favicon`,
   ],
 };
 
@@ -207,3 +207,5 @@ module.exports = {
 //     _attr: { text: "Personal Journals" }
 //   }}
 // ]},
+
+// icon: `content/assets/gatsby-icon.png`,
