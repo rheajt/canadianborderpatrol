@@ -3,7 +3,9 @@ import { StaticQuery, graphql, Link } from 'gatsby';
 import { Flex, Box, Heading } from "rebass";
 import styled from 'styled-components';
 
-// import cbpSeal from '../assets/canadian-border-patrol-logo.png';
+// Logo styling trick allows automatic resizing,
+// but if container is larger than image size, the image won't center
+// Responsive widths are chosen to center the logo and keep it responsive
 
 class Title extends React.Component {
   render() {
@@ -11,23 +13,17 @@ class Title extends React.Component {
       max-width: 100%;
       height: auto;
     `
-    const cbpSeal = '/canadian-border-patrol-logo.png'
+    const cbpSeal = '/cbp-logo-400.png'
     return(
       <StaticQuery
         query={titleQuery}
         render={data => {
           const siteTitle = data.site.siteMetadata.title;
           return(
-            <Flex
-              flexWrap='nowrap'
-              flexDirection='row'
-              justifyContent='flex-start'
-              alignItems='center'
-            >
+            <Flex width={1} justifyContent="center">
               <Box
-                width={[1/10, 1/8, 1/6]}
-                mr={2}
-                flex='0 1 auto'
+                width={[.5, null, 300]}
+                flex="0 1 auto"
               >
                 <Link to='/'>
                   <Logo
@@ -36,22 +32,6 @@ class Title extends React.Component {
                   />
                 </Link>
               </Box>
-              <Heading
-                textAlign="left"
-                fontSize={[4,5,6,7]}
-                fontFamily='serif'
-                flex='0 1 auto'
-              >
-                <Link
-                  to='/'
-                  css={{
-                    textDecoration: 'none',
-                    color: 'inherit'
-                  }}
-                >
-                  {siteTitle}
-                </Link>
-              </Heading>
             </Flex>
           )
         }}
