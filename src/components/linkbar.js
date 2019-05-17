@@ -20,7 +20,7 @@ const LinkBar = props => {
             iTunes
           </Link>
           |
-          <Link px={{1, 2}} href="https://www.stitcher.com/podcast/canadian-border-patrol?refid=stpr">
+          <Link px={[1, 2]} href="https://www.stitcher.com/podcast/canadian-border-patrol?refid=stpr">
             Stitcher
           </Link>
           |
