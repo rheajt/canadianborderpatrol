@@ -16,8 +16,12 @@ const LinkBar = props => {
       pr={2}
     >
       <Text fontSize={[2, 3, 4]}>
-          <Link px={[1, 2]} href="http://www.apple.com">
-          iTunes
+          <Link px={[1, 2]} href="https://podcasts.apple.com/ca/podcast/canadian-border-patrol/id1463751515">
+            iTunes
+          </Link>
+          |
+          <Link px={{1, 2}} href="https://www.stitcher.com/podcast/canadian-border-patrol?refid=stpr">
+            Stitcher
           </Link>
           |
           <Link px={[1, 2]} href={rssFeed}>
