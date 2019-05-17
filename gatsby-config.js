@@ -201,11 +201,5 @@ module.exports = {
   ],
 };
 
-// { "itunes:category": [
-//   { _attr: { text: "Society & Culture" }},
-//   { "itunes:category": {
-//     _attr: { text: "Personal Journals" }
-//   }}
-// ]},
-
-// icon: `content/assets/gatsby-icon.png`,
+// TODO: fix feed generation to show entire shownotes on iTunes
+// TODO: fix feed generation to give plain text shownotes and better description on Stitcher
