@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Canadian Border Patrol`,
-    description: 'The realest, fake border agency in North America',
+    description: 'Totally fake border agency, real strange Canadian culture',
     siteUrl: 'https://canadianborderpatrol.com',
     authors: [
       {
@@ -62,6 +62,7 @@ module.exports = {
         ],
       },
     },
+    `gatsby-transformer-remark-plaintext`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
@@ -105,7 +106,7 @@ module.exports = {
                 }
               }},
               { "itunes:subtitle": siteMetadata.description },
-              { "itunes:summary": "Ryan is Canadian. Jordan is American. Together, they explore strange and interesting bits of Canadian culture." },
+              { "itunes:summary": "Ryan is Canadian. Jordan is American. Together, they investigate strange and interesting bits of Canadian culture." },
               { "image": [
                 { "url": "https://s3-us-west-2.amazonaws.com/canadianborderpatrol.com/data/cpb_logo_1400.png" },
                 { "title": siteMetadata.title },
@@ -139,7 +140,7 @@ module.exports = {
               return allMarkdownRemark.edges.map(edge => {
                 return Object.assign({}, edge.node.frontmatter, {
                   title: edge.node.frontmatter.title,
-                  description: edge.node.excerpt,
+                  description: edge.node.html,
                   date: edge.node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
@@ -151,6 +152,7 @@ module.exports = {
                     { 'content:encoded': "<![CDATA["+edge.node.html+"]]>" },
                     { 'itunes:duration': edge.node.frontmatter.episodeDuration },
                     { 'itunes:subtitle': edge.node.excerpt },
+                    { 'itunes:summary': edge.node.plainText },
                   ],
                 });
               });
@@ -165,6 +167,7 @@ module.exports = {
                   node {
                     excerpt
                     html
+                    plainText
                     fields { slug }
                     frontmatter {
                       title
