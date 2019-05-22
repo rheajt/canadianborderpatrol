@@ -139,6 +139,8 @@ module.exports = {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
               return allMarkdownRemark.edges.map(edge => {
                 const fullUrl = site.siteMetadata.siteUrl + edge.node.fields.slug;
+                const shownotesLinkText = `Go to ${fullUrl} for show notes.`;
+                const themeSongText = 'Thanks to The Motorleague(https://www.themotorleague.ca/) for our theme song "North America"!';
                 return Object.assign({}, edge.node.frontmatter, {
                   title: edge.node.frontmatter.title,
                   description: edge.node.html,
@@ -153,7 +155,7 @@ module.exports = {
                     { 'content:encoded': "<![CDATA["+edge.node.html+"]]>" },
                     { 'itunes:duration': edge.node.frontmatter.episodeDuration },
                     { 'itunes:subtitle': edge.node.excerpt },
-                    { 'itunes:summary': edge.node.plainText },
+                    { 'itunes:summary': edge.node.excerpt+"\n"+shownotesLinkText+"\n"+themeSongText },
                   ],
                 });
               });
