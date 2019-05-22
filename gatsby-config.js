@@ -138,12 +138,13 @@ module.exports = {
           {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
               return allMarkdownRemark.edges.map(edge => {
+                const fullUrl = site.siteMetadata.siteUrl + edge.node.fields.slug;
                 return Object.assign({}, edge.node.frontmatter, {
                   title: edge.node.frontmatter.title,
                   description: edge.node.html,
                   date: edge.node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  url: fullUrl,
+                  guid: fullUrl,
                   enclosure: {
                     'url': edge.node.frontmatter.url,
                     'type': 'audio/mpeg',
