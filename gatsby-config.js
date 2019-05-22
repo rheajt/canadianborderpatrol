@@ -62,7 +62,6 @@ module.exports = {
         ],
       },
     },
-    `gatsby-transformer-remark-plaintext`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
@@ -170,7 +169,6 @@ module.exports = {
                   node {
                     excerpt
                     html
-                    plainText
                     fields { slug }
                     frontmatter {
                       title
