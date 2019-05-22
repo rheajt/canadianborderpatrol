@@ -10,9 +10,8 @@ Jordan and Ryan continue investigating the Heritage Minute PSAs, and Jordan disc
 
 <!-- end -->
 
-* [My Heritage Minute Playlist](https://www.youtube.com/playlist?list=PLByS-hlj65aUUgbC4cTYvP6hVBTaH4TaJ)
-    * Sourced from articles by Justin McElroy ([not that one](https://www.themcelroy.family/))
-        * [The 10 Best Canadian Heritage Minutes of All Time](https://justinmcelroy.com/2014/11/19/the-10-best-canadian-heritage-minutes-of-all-time/)
-        * [Ranking Every Canadian Heritage Minute: #25-11](https://justinmcelroy.com/2014/11/14/ranking-every-canadian-heritage-minute-25-10/)
+I built my Heritage Minute Playlist(https://tinyurl.com/y4qm7nov) using these articles by Justin McElroy (not the one from https://www.themcelroy.family/)
+* The 10 Best Canadian Heritage Minutes of All Time(https://tinyurl.com/y5vmtzyv)
+* Ranking Every Canadian Heritage Minute: #25-11(https://tinyurl.com/y5wjvjvw)
 
-Thanks to [The Motorleague](https://www.themotorleague.ca/) for our theme song ["North America"](https://themotorleague.bandcamp.com/track/north-america-2) from their album *[Acknowledge, Acknowledge](https://themotorleague.bandcamp.com/album/acknowledge-acknowledge-2)*!
+Thanks to The Motorleague(https://www.themotorleague.ca/) for our theme song "North America"!
