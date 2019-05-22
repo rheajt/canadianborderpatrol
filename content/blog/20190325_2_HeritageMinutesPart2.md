@@ -7,7 +7,6 @@ episodeDuration: '53:08'
 ---
 
 Jordan and Ryan continue investigating the Heritage Minute PSAs, and Jordan discovers the true nature of Canadian history.
-
 <!-- end -->
 
 I built my Heritage Minute Playlist(https://tinyurl.com/y4qm7nov) using these articles by Justin McElroy (not the one from https://www.themcelroy.family/)
