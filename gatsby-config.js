@@ -1,4 +1,4 @@
-module.exports = {
+const cfg = {
   siteMetadata: {
     title: `Canadian Border Patrol`,
     description: 'Totally fake border agency, real strange Canadian culture',
@@ -203,3 +203,18 @@ module.exports = {
     `gatsby-plugin-favicon`,
   ],
 };
+
+// Draft posts are visible when not in production
+// Based on https://chaseonsoftware.com/gatsby-drafts/
+if (process.env.NODE_ENV !== "production") {
+  const draftsCfg = {
+    resolve: `gatsby-source-filesystem`,
+    options: {
+      name: `drafts`,
+      path: `${__dirname}/content/drafts`
+    }
+  };
+  cfg.plugins.push(draftsCfg);
+}
+
+module.exports = cfg;
