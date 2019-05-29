@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import mountains from '../assets/mountains.png';
 
 const theme = {
   breakpoints: ['26em', '40em', '54em'],
@@ -21,10 +22,18 @@ const theme = {
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700');
-  body {
+  html, body {
     padding: 0;
     margin: 0;
     font-family: Helvetica, Arial, sans-serif;
+    background-image: url(${mountains});
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
   }
   a {
     text-decoration: none;
