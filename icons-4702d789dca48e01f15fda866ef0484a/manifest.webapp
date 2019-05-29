@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "name": "canadianborderpatrol",
+  "description": null,
+  "icons": {
+    "60": "/icons-4702d789dca48e01f15fda866ef0484a/firefox_app_60x60.png",
+    "128": "/icons-4702d789dca48e01f15fda866ef0484a/firefox_app_128x128.png",
+    "512": "/icons-4702d789dca48e01f15fda866ef0484a/firefox_app_512x512.png"
+  },
+  "developer": {
+    "name": null,
+    "url": null
+  }
+}
