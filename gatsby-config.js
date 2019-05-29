@@ -187,7 +187,6 @@ module.exports = {
         ],
       },
     },
-
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -204,6 +203,3 @@ module.exports = {
     `gatsby-plugin-favicon`,
   ],
 };
-
-// TODO: fix feed generation to show entire shownotes on iTunes
-// TODO: fix feed generation to give plain text shownotes and better description on Stitcher
