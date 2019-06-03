@@ -1,13 +1,46 @@
 import React from 'react';
 import { Flex, Link, Text } from 'rebass';
 import styled from 'styled-components';
-import { FaItunesNote, FaRss, FaTwitter } from 'react-icons/fa';
+import { Icon } from '@iconify/react';
+import iTunesNoteIcon from "@iconify/react/fa-brands/itunes-note";
+import googlePlayIcon from "@iconify/react/fa-brands/google-play";
+import stitcherIcon from "@iconify/react/simple-icons/stitcher";
+import rssIcon from "@iconify/react/fa-solid/rss";
+import twitterIcon from "@iconify/react/fa-brands/twitter";
+
 
 function LinkBar(props) {
   const rssFeed =
     process.env.NODE_ENV === 'development'
       ? 'http://localhost:8000/rss.xml'
       : 'https://canadianborderpatrol.com/rss.xml';
+  const links = [
+    {
+      text: "iTunes",
+      href: "https://podcasts.apple.com/ca/podcast/canadian-border-patrol/id1463751515",
+      icon: iTunesNoteIcon,
+    },
+    {
+      text: "Google Play",
+      href: "https://play.google.com/music/listen?u=0#/ps/Ijfvdnyyavpl4jo4witxkakz5f4",
+      icon: googlePlayIcon,
+    },
+    {
+      text: "Stitcher",
+      href: "https://www.stitcher.com/podcast/canadian-border-patrol?refid=stpr",
+      icon: stitcherIcon,
+    },
+    {
+      text: "RSS",
+      href: rssFeed,
+      icon: rssIcon,
+    },
+    {
+      text: "Twitter",
+      href: "https://podcasts.apple.com/ca/podcast/canadian-border-patrol/id1463751515",
+      icon: twitterIcon,
+    }
+  ]
   return (
     <Flex
       flexWrap="nowrap"
@@ -16,28 +49,23 @@ function LinkBar(props) {
       p={2}
       pr={2}
     >
-      <Text fontSize={[2, 3, 4]}>
-        <StyledLink
-          // px={[1, 2]}
-          href="https://podcasts.apple.com/ca/podcast/canadian-border-patrol/id1463751515"
-        >
-          <FaItunesNote /> iTunes
-        </StyledLink>
-        |
-        <StyledLink
-          px={[1, 2]}
-          href="https://www.stitcher.com/podcast/canadian-border-patrol?refid=stpr"
-        >
-          Stitcher
-        </StyledLink>
-        |
-        <StyledLink px={[1, 2]} href={rssFeed}>
-          <FaRss /> Rss
-        </StyledLink>
-        |
-        <StyledLink px={[1, 2]} href="https://twitter.com/canborderpatrol">
-          <FaTwitter /> Twitter
-        </StyledLink>
+      <Text fontSize={[1, 2, 3]}>
+        {links.map((link, index, array) => {
+          let divider = "";
+          if (index !== array.length - 1) {
+            divider = " | "
+          }
+          return (
+            <>
+              <StyledLink
+                px={[1, 2]}
+                href={link.href}>
+                <Icon icon={link.icon} /> {link.text}
+              </StyledLink>
+              {divider}
+            </>
+          )
+        })}
       </Text>
     </Flex>
   );
@@ -48,3 +76,25 @@ export default LinkBar;
 const StyledLink = styled(Link)`
   color: black;
 `;
+
+// <StyledLink
+//   px={[1, 2]}
+//   href="https://podcasts.apple.com/ca/podcast/canadian-border-patrol/id1463751515"
+// >
+//   <FaItunesNote /> iTunes
+// </StyledLink>
+//  |
+// <StyledLink
+//   px={[1, 2]}
+//   href="https://www.stitcher.com/podcast/canadian-border-patrol?refid=stpr"
+// >
+//   Stitcher
+// </StyledLink>
+//  |
+// <StyledLink px={[1, 2]} href={rssFeed}>
+//   <FaRss /> Rss
+// </StyledLink>
+//  |
+// <StyledLink px={[1, 2]} href="https://twitter.com/canborderpatrol">
+//   <FaTwitter /> Twitter
+// </StyledLink>
