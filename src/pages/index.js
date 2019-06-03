@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import { IoMdArrowForward } from 'react-icons/io';
+import { Icon } from '@iconify/react';
+import arrowRight from "@iconify/react/fa-solid/arrow-right";
 import { Flex, Text, Box } from 'rebass';
 
 import Layout from '../components/layout';
@@ -34,7 +35,7 @@ const SiteIndex = props => {
         fontWeight="bold"
         to="/episodes/"
       >
-        All Episodes <IoMdArrowForward />
+        All Episodes <Icon icon={arrowRight} />
       </SimpleGatsbyLink>
       <Divider width={1 / 2} />
     </Layout>

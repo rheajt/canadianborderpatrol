@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Flex, Box, Text, Link } from 'rebass';
 import styled from 'styled-components';
-import { FaTwitter } from 'react-icons/fa';
+import { Icon } from '@iconify/react';
+import twitterIcon from "@iconify/react/fa-brands/twitter";
 
 const BioItem = props => {
   return (
@@ -25,7 +26,7 @@ const BioItem = props => {
       </Text>
       <Text mb={1}>{props.bioDescription}</Text>
       <Link href={`https://twitter.com/${props.bioTwitter}`}>
-        <FaTwitter />
+        <Icon icon={twitterIcon} />
       </Link>
     </Flex>
   );
