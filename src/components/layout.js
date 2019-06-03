@@ -5,7 +5,7 @@ import theme, { GlobalStyle } from '../theme';
 import Header from './header';
 import Footer from './footer';
 
-function Layout({ children }) {
+const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <Container>

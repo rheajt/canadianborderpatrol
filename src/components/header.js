@@ -5,20 +5,17 @@ import Title from './title';
 import LinkBar from './linkbar';
 
 
-class Header extends React.Component {
-  render() {
-    return(
+const Header = () => {
+  return(
     <Flex
       width={1}
       flexWrap='noflex'
       flexDirection='column'
-      alignItems='center'
-    >
+      alignItems='center'>
       <Title />
       <LinkBar />
     </Flex>
-    )
-  }
+  )
 }
 
 export default Header;
