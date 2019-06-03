@@ -9,7 +9,7 @@ import rssIcon from "@iconify/react/fa-solid/rss";
 import twitterIcon from "@iconify/react/fa-brands/twitter";
 
 
-function LinkBar(props) {
+const LinkBar = props => {
   const rssFeed =
     process.env.NODE_ENV === 'development'
       ? 'http://localhost:8000/rss.xml'
