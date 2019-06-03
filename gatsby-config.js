@@ -151,7 +151,7 @@ const cfg = {
                     'type': 'audio/mpeg',
                   },
                   custom_elements: [
-                    { 'content:encoded': "<![CDATA["+edge.node.html+"]]>" },
+                    { 'content:encoded': {_cdata: edge.node.html }},
                     { 'itunes:duration': edge.node.frontmatter.episodeDuration },
                     { 'itunes:subtitle': edge.node.excerpt },
                     { 'itunes:summary': edge.node.excerpt+"\n"+shownotesLinkText+"\n"+themeSongText },
