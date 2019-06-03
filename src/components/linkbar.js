@@ -76,25 +76,3 @@ export default LinkBar;
 const StyledLink = styled(Link)`
   color: black;
 `;
-
-// <StyledLink
-//   px={[1, 2]}
-//   href="https://podcasts.apple.com/ca/podcast/canadian-border-patrol/id1463751515"
-// >
-//   <FaItunesNote /> iTunes
-// </StyledLink>
-//  |
-// <StyledLink
-//   px={[1, 2]}
-//   href="https://www.stitcher.com/podcast/canadian-border-patrol?refid=stpr"
-// >
-//   Stitcher
-// </StyledLink>
-//  |
-// <StyledLink px={[1, 2]} href={rssFeed}>
-//   <FaRss /> Rss
-// </StyledLink>
-//  |
-// <StyledLink px={[1, 2]} href="https://twitter.com/canborderpatrol">
-//   <FaTwitter /> Twitter
-// </StyledLink>
