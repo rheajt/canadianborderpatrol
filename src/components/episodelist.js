@@ -6,7 +6,7 @@ import Divider from './divider';
 
 const EpisodeList = props => (
   <Flex flexWrap="nowrap" flexDirection="column" justifyContent="center">
-    <Divider width={1 / 2} />
+    {/* <Divider width={1 / 2} /> */}
     {props.posts.map(post => (
       <React.Fragment key={post.slug}>
         <EpisodeListItem
