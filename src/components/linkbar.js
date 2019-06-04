@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex, Link, Text } from 'rebass';
+import { Flex, Link, Text, Button } from 'rebass';
 import styled from 'styled-components';
 import { Icon } from '@iconify/react';
 import iTunesNoteIcon from "@iconify/react/fa-brands/itunes-note";
@@ -43,36 +43,26 @@ const LinkBar = props => {
   ]
   return (
     <Flex
-      flexWrap="nowrap"
+      flexWrap="wrap"
       flexDirection="row"
       alignItems="center"
+      justifyContent="center"
       p={2}
       pr={2}
     >
-      <Text fontSize={[1, 2, 3]}>
-        {links.map((link, index, array) => {
-          let divider = "";
-          if (index !== array.length - 1) {
-            divider = " | "
-          }
-          return (
-            <>
-              <StyledLink
-                px={[1, 2]}
-                href={link.href}>
-                <Icon icon={link.icon} /> {link.text}
-              </StyledLink>
-              {divider}
-            </>
-          )
-        })}
-      </Text>
+      {links.map((link, index, array) => {
+        return (
+          <Button bg='flagred' m={1}>
+            <Link
+              color='white'
+              href={link.href}>
+              <Icon icon={link.icon} /> {link.text}
+            </Link>
+          </Button>
+        )
+      })}
     </Flex>
   );
 }
 
 export default LinkBar;
-
-const StyledLink = styled(Link)`
-  color: black;
-`;
