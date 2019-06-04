@@ -1,12 +1,12 @@
 ---
 number: 6
-title: Canadian 90s Playlist (Part 2)
+title: Canadian 90s Playlist (Part 3)
 date: '2019-05-20T12:00:00.284Z'
 url: https://s3-us-west-2.amazonaws.com/canadianborderpatrol.com/episodes/Canadian+Border+Patrol+06+-+Canadian+90s+Playlist+Part+3.mp3
 episodeDuration: '53:37'
 ---
 
-Jordan and Ryan investigate Canadian snack food, and almost give themselves diabetes. (We're eating food all episode, so consider yourselves warned!)
+Jordan and Ryan are still investigating Spotify's Canadian 90s playlist. You oughta know about it! 
 <!-- end -->
 
 Moment of Canadianness: Waiting for the pileup to clear (https://tinyurl.com/y2gzrcak)
