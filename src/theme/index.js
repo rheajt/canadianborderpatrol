@@ -7,6 +7,7 @@ const theme = {
   colors: {
     blue: '#07c',
     lightgray: '#f6f6ff',
+    flagred: '#eb2d37'
   },
   space: [0, 4, 8, 16, 32, 64, 128, 256],
   fonts: {

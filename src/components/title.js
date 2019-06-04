@@ -31,7 +31,7 @@ const Title = () => {
       </Box>
       <Heading
         fontSize={[3]}
-        color="#EB2D37"
+        color="flagred"
         css={{textAlign: 'center'}}>
         {siteDescription}
       </Heading>
