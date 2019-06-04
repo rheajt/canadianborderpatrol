@@ -23,7 +23,7 @@ const Layout = ({ children }) => {
 export default Layout;
 
 const Content = styled.div`
-  background-color: white;
+  background-color: #FFFFFFE6;
   padding: 3rem 3rem;
   border-radius: 15px;
 `;
