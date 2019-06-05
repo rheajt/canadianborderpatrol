@@ -12,7 +12,7 @@ class BlogPostTemplate extends React.Component {
     const siteTitle = this.props.data.site.siteMetadata.title;
     const { previous, next } = this.props.pageContext;
 
-    const [__, id] = post.frontmatter.url.split('id=');
+    const { url } = post.frontmatter;
 
     return (
       <Layout>
@@ -20,35 +20,27 @@ class BlogPostTemplate extends React.Component {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
-        <Flex flexWrap='noflex' flexDirection='column'>
-          <Heading fontSize={[2,3,4]}>{siteTitle} Investigates...</Heading>
-          <Flex flexWrap='flex' flexDirection='row' alignItems='baseline'>
-            <Heading fontSize={[3,4,5]}>
-              {post.frontmatter.title}
-            </Heading>
-            <Text fontSize={[0, 1, 2]} ml={2} css={{fontStyle: 'italic'}}>
+        <Flex flexWrap="noflex" flexDirection="column">
+          <Heading fontSize={[2, 3, 4]}>{siteTitle} Investigates...</Heading>
+          <Flex flexWrap="flex" flexDirection="row" alignItems="baseline">
+            <Heading fontSize={[3, 4, 5]}>{post.frontmatter.title}</Heading>
+            <Text fontSize={[0, 1, 2]} ml={2} css={{ fontStyle: 'italic' }}>
               Ep. {post.frontmatter.number} - {post.frontmatter.date}
             </Text>
           </Flex>
-          <Box>
-            {/* <iframe frameBorder="0" width="400" src={post.frontmatter.url} /> */}
-          </Box>
-          <Box mt={3} alignSelf='center'>
+          <Box mt={3} alignSelf="center">
             <audio controls>
-              <source
-                src={`https://docs.google.com/uc?export=download&id=${id}`}
-                type="audio/mp3"
-              />
+              <source src={url} type="audio/mp3" />
             </audio>
           </Box>
           <Box mx={2}>
             <div dangerouslySetInnerHTML={{ __html: post.html }} />
           </Box>
-          <Divider width={1/4} />
+          <Divider width={1 / 4} />
           <Flex
-            flexWrap='flex'
-            justifyContent='space-between'
-            flexDirection='row'
+            flexWrap="flex"
+            justifyContent="space-between"
+            flexDirection="row"
           >
             <Box>
               {previous && (
