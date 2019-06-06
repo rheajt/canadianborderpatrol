@@ -1,7 +1,7 @@
 const cfg = {
   siteMetadata: {
     title: `Canadian Border Patrol`,
-    description: 'Totally fake border agency, real strange Canadian culture',
+    description: 'Totally fake border agency, absolutely real Canadian culture',
     siteUrl: 'https://canadianborderpatrol.com',
     authors: [
       {

@@ -11,8 +11,13 @@ const Title = () => {
   const cbpSeal = '/cbp-logo-400.png';
   const { site } = useStaticQuery(titleQuery);
   const siteTitle = site.siteMetadata.title;
+  const siteDescription = site.siteMetadata.description;
   return(
-    <Flex width={1} justifyContent="center">
+    <Flex
+      width={1}
+      justifyContent="center"
+      alignItems="center"
+      flexDirection="column">
       <Box
         width={[.5, null, 300]}
         flex="0 1 auto"
@@ -24,6 +29,12 @@ const Title = () => {
           />
         </Link>
       </Box>
+      <Heading
+        fontSize={[3]}
+        color="flagred"
+        css={{textAlign: 'center'}}>
+        {siteDescription}
+      </Heading>
     </Flex>
   )
 }
@@ -33,6 +44,7 @@ const titleQuery = graphql`
     site {
       siteMetadata {
         title
+        description
       }
     }
   }
