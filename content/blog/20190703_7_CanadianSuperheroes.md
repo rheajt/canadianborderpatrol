@@ -1,7 +1,7 @@
 ---
 number: 7
 title: Canadian Superheroes
-date: '2019-07-01T12:00:00.284Z'
+date: '2019-07-03T12:00:00.284Z'
 url: https://s3-us-west-2.amazonaws.com/canadianborderpatrol.com/episodes/Canadian+Border+Patrol+07+-+Canadian+Superheroes.mp3
 episodeDuration: '01:20:28'
 ---
