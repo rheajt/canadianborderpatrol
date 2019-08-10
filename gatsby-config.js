@@ -176,10 +176,9 @@ const cfg = {
                       'itunes:summary':
                         edge.node.excerpt +
                         '\n' +
-                        shownotesLinkText +
-                        '\n' +
-                        themeSongText,
+                        shownotesLinkText,
                     },
+                    { 'itunes:episode': edge.node.frontmatter.number },
                   ],
                 });
               });
@@ -196,6 +195,7 @@ const cfg = {
                     html
                     fields { slug }
                     frontmatter {
+                      number
                       title
                       date
                       url
