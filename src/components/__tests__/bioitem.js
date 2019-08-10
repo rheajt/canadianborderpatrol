@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import BioItem from '../bioitem';
+import BioItem from '../bioitem.js';
 
 describe('<BioItem />', () => {
   const author = {

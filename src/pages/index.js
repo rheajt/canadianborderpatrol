@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import { Icon } from '@iconify/react';
-import arrowRight from "@iconify/react/fa-solid/arrow-right";
+import arrowRight from "@iconify/icons-fa-solid/arrow-right";
 import { Flex, Text, Box } from 'rebass';
 
 import Layout from '../components/layout';

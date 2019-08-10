@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Flex, Box, Text, Link } from 'rebass';
 import styled from 'styled-components';
 import { Icon } from '@iconify/react';
-import twitterIcon from "@iconify/react/fa-brands/twitter";
+import twitterIcon from "@iconify/icons-fa-brands/twitter";
 
 const BioItem = props => {
   return (

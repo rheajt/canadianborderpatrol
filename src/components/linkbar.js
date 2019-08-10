@@ -2,11 +2,11 @@ import React from 'react';
 import { Flex, Link, Text, Button } from 'rebass';
 import styled from 'styled-components';
 import { Icon } from '@iconify/react';
-import iTunesNoteIcon from "@iconify/react/fa-brands/itunes-note";
-import googlePlayIcon from "@iconify/react/fa-brands/google-play";
-import stitcherIcon from "@iconify/react/simple-icons/stitcher";
-import rssIcon from "@iconify/react/fa-solid/rss";
-import twitterIcon from "@iconify/react/fa-brands/twitter";
+import iTunesNoteIcon from "@iconify/icons-fa-brands/itunes-note";
+import googlePlayIcon from "@iconify/icons-fa-brands/google-play";
+import stitcherIcon from "@iconify/icons-simple-icons/stitcher";
+import rssIcon from "@iconify/icons-fa-solid/rss";
+import twitterIcon from "@iconify/icons-fa-brands/twitter";
 
 
 const LinkBar = props => {
