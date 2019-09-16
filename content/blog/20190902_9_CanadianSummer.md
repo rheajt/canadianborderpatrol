@@ -1,6 +1,6 @@
 ---
 number: 9
-title: Canadian Sports Part 1
+title: Canadian Summer Part 1
 date: '2019-09-02T12:00:00.284Z'
 url: https://s3-us-west-2.amazonaws.com/canadianborderpatrol.com/episodes/Canadian+Border+Patrol+09+-+Canadian+Summer.mp3
 episodeDuration: '48:48'
