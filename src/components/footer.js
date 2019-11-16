@@ -4,16 +4,22 @@ import styled from 'styled-components';
 
 import Bio from './bio';
 
-const Footer = () => {
-  return(
+const Footer = ({ unsplashUser: user }) => {
+  return (
     <>
       <Bio />
       <Box fontSize={0}>
-        <FootText>© {new Date().getFullYear()} Canadian Border Patrol</FootText>
+        <FootText>
+          <p>© {new Date().getFullYear()} Canadian Border Patrol</p>
+          <p>
+            Background image by <a href={user.links.html}>{user.name}</a> /{' '}
+            <a href="https://unsplash.com">Unsplash</a>
+          </p>
+        </FootText>
       </Box>
     </>
   );
-}
+};
 
 export default Footer;
 

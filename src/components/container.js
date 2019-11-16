@@ -1,16 +1,19 @@
 import React from 'react';
 import { Box } from 'rebass';
 
-const Container = props => (
-  <Box
-    {...props}
-    mx="auto"
-    p={2}
-    css={{
-      maxWidth: '1024px',
-      minWidth: '320px',
-    }}
-  />
-);
+function Container({ backgroundImage, ...props }) {
+  return (
+    <Box
+      {...props}
+      mx="auto"
+      css={{
+        backgroundImage: `url(${backgroundImage.urls.regular})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
+      }}
+    />
+  );
+}
 
 export default Container;

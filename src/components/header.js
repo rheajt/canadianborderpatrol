@@ -4,27 +4,28 @@ import styled from 'styled-components';
 import Title from './title';
 import LinkBar from './linkbar';
 
-
 const Header = () => {
-  return(
+  return (
     <Background>
       <Flex
-        width={1}
-        flexWrap='noflex'
-        flexDirection='column'
-        alignItems='center'>
+        // flexWrap="noflex"
+        flexDirection="column"
+        alignItems="center"
+      >
         <Title />
         <LinkBar />
       </Flex>
     </Background>
-  )
-}
+  );
+};
 
 export default Header;
 
 const Background = styled.div`
-  background-color: #FFFFFFE6;
-  padding: .5rem .5rem;
-  margin-bottom: .5rem;
+  /* background-image: radial-gradient(circle at center, #ffffffc7, #ffffff00); */
+  margin: 0 auto;
+  max-width: 768px;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0.5rem;
   border-radius: 15px;
 `;

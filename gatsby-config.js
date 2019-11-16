@@ -40,6 +40,15 @@ const cfg = {
       },
     },
     {
+      resolve: `gatsby-source-unsplash`,
+      options: {
+        appId: `4ad7955a4b84da42db5980c6e2fe92781949709283c0572f985b067d7245a873`,
+        collections: [`1705491`],
+        // optional: will only get page 1, so increase this count to include > 10 photos
+        perPage: `100`,
+      },
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         excerpt_separator: `<!-- end -->`,
@@ -169,14 +178,14 @@ const cfg = {
                     type: 'audio/mpeg',
                   },
                   custom_elements: [
-                    { 'content:encoded': {_cdata: edge.node.html }},
-                    { 'itunes:duration': edge.node.frontmatter.episodeDuration },
+                    { 'content:encoded': { _cdata: edge.node.html } },
+                    {
+                      'itunes:duration': edge.node.frontmatter.episodeDuration,
+                    },
                     { 'itunes:subtitle': edge.node.excerpt },
                     {
                       'itunes:summary':
-                        edge.node.excerpt +
-                        '\n' +
-                        shownotesLinkText,
+                        edge.node.excerpt + '\n' + shownotesLinkText,
                     },
                     { 'itunes:episode': edge.node.frontmatter.number },
                   ],

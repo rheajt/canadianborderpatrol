@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import mountains from '../assets/mountains.png';
+// import mountains from '../assets/mountains.png';
 
 const theme = {
   breakpoints: ['26em', '40em', '54em'],
@@ -7,7 +7,7 @@ const theme = {
   colors: {
     blue: '#07c',
     lightgray: '#f6f6ff',
-    flagred: '#eb2d37'
+    flagred: '#eb2d37',
   },
   space: [0, 4, 8, 16, 32, 64, 128, 256],
   fonts: {
@@ -27,10 +27,6 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
     font-family: Helvetica, Arial, sans-serif;
-    background-image: url(${mountains});
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
     box-sizing: border-box;
   }
   *, *:before, *:after {
