@@ -46,7 +46,7 @@
     "babel-jest": "^24.8.0",
     "babel-preset-gatsby": "^0.1.11",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^24.8.0",
+    "jest": "^29.3.1",
     "prettier": "^1.18.2",
     "react-test-renderer": "^16.9.0"
   },
